@@ -1,6 +1,6 @@
 # ycode-nvim-theme
 
-Ycode Light is a concrete Neovim colorscheme built on top of `neo-ds`, the Neovim Design System.
+YCODE Light is a concrete Neovim colorscheme built on top of `neo-ds`, the Neovim Design System.
 
 The theme is intentionally thin: it defines a structured color palette and lets `neo-ds` own the semantic roles, highlight compilation, and plugin integrations.
 
@@ -29,11 +29,19 @@ With lazy.nvim:
   dependencies = { "mrvanish97/neo-ds" },
   config = function()
     vim.opt.background = "light"
-    vim.cmd.colorscheme("ycode-owned-light")
+    vim.cmd.colorscheme("ycode-light")
   end,
 }
 ```
 
+## Scope
+
+The repository should stay close to a single concrete theme file:
+
+- keep palette data in `colors/ycode-light.lua`
+- keep semantic behavior in `neo-ds`
+- do not add highlight overrides here
+- do not add another palette resolver here
 ## TODO
 
 - Add a dark variant.

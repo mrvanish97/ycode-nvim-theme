@@ -1,6 +1,6 @@
 ---@type NeoDs.Theme
 local theme = {
-  name = "ycode-owned-light",
+  name = "ycode-light",
   background = "light",
 
   primitives = {
