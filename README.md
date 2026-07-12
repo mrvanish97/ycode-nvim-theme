@@ -1,6 +1,6 @@
 # ycode-nvim-theme
 
-YCODE Owned Light is a concrete Neovim colorscheme built on top of `neo-ds`, the Neovim Design System.
+Ycode Light is a concrete Neovim colorscheme built on top of `neo-ds`, the Neovim Design System.
 
 The theme is intentionally thin: it defines a structured color palette and lets `neo-ds` own the semantic roles, highlight compilation, and plugin integrations.
 
