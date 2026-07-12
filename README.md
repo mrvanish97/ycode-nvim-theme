@@ -34,15 +34,6 @@ With lazy.nvim:
 }
 ```
 
-## Scope
-
-The repository should stay close to a single concrete theme file:
-
-- keep palette data in `colors/ycode-owned-light.lua`
-- keep semantic behavior in `neo-ds`
-- do not add highlight overrides here
-- do not add another palette resolver here
-
 ## TODO
 
 - Add a dark variant.
