@@ -1,0 +1,6 @@
+{
+  "workspace.library": [
+    "../neo-ds/lua"
+  ],
+  "workspace.checkThirdParty": false
+}
