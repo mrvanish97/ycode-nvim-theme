@@ -12,6 +12,15 @@ This repository contains concrete YCODE themes for `neo-ds`, the Neovim Design S
 - Keep the light theme in `colors/ycode-owned-light.lua`.
 - Add a dark theme as a separate colorscheme file when it exists.
 
+## Scope
+
+The repository should stay close to a single concrete theme file:
+
+- keep palette data in `colors/ycode-owned-light.lua`
+- keep semantic behavior in `neo-ds`
+- do not add highlight overrides here
+- do not add another palette resolver here
+
 ## Verification
 
 Run:
