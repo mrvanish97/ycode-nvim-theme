@@ -1,8 +1,12 @@
 ---@type NeoDs.Theme
 local theme = {
-  name = "ycode-light",
+  name = "vibecolor-light",
   background = "light",
 
+  -- A literal -90-degree OKLCH hue rotation of YCode. Lightness and chroma
+  -- remain unchanged where the rotated color fits in sRGB. Out-of-gamut
+  -- colors retain lightness and hue while chroma is reduced to the boundary.
+  -- The nested names identify the source YCode color family.
   primitives = {
     neutral = {
       ["0"] = "#ffffff",
@@ -10,8 +14,8 @@ local theme = {
       ["100"] = "#f4f4f4",
       ["200"] = "#e5e5e5",
       ["300"] = "#cdcdcd",
-      ["600"] = "#434e58",
-      ["700"] = "#8a99a6",
+      ["600"] = "#5c6b61",
+      ["700"] = "#8b9c90",
       ["1000"] = "#000000",
     },
 
@@ -19,37 +23,34 @@ local theme = {
       foreground = "#ffffff",
     },
 
-    blue = {
-      primary = "#0f68a0",
-      deep = "#003d72",
-      literal = "#272ad8",
-      selection = "#dcecff",
-      reference = "#e8f0fe",
-      reference_subtle = "#f3f8ff",
-      reference_write = "#eef6ff",
-    },
-
-    magenta = {
-      primary = "#ad3da4",
-      secondary = "#804fb8",
-      tertiary = "#4b21b0",
-    },
-
-    red = {
-      primary = "#d12f1b",
-      subtle = "#fff0f0",
-    },
-
-    green = {
-      primary = "#2d8504",
-      subtle = "#f0fff2",
-    },
-
-    yellow = {
-      primary = "#b8860b",
-      subtle = "#fef3d0",
-      search = "#fff3b0",
-      search_active = "#ffd700",
+    rotated = {
+      blue = {
+        primary = "#167542",
+        literal = "#006053",
+        selection = "#d9f1e4",
+        reference = "#e3f4ee",
+        reference_subtle = "#f1faf6",
+        reference_write = "#edf8f2",
+      },
+      magenta = {
+        primary = "#007ab7",
+        secondary = "#007a8c",
+        tertiary = "#005657",
+      },
+      red = {
+        primary = "#8b4ed6",
+        subtle = "#f3f3ff",
+      },
+      green = {
+        primary = "#af4f00",
+        subtle = "#fff9f4",
+      },
+      yellow = {
+        primary = "#cb6b99",
+        subtle = "#ffeef2",
+        search = "#ffecee",
+        search_active = "#ffc9d4",
+      },
     },
   },
 
@@ -61,7 +62,7 @@ local theme = {
       tertiary = "primitive.neutral.200",
       quaternary = "primitive.neutral.300",
       cursorline = "primitive.neutral.50",
-      selection = "primitive.blue.selection",
+      selection = "primitive.rotated.blue.selection",
       editor = "background.primary",
       sidebar = "background.secondary",
       float = "background.secondary",
@@ -76,22 +77,22 @@ local theme = {
       },
 
       search = {
-        _ = "primitive.yellow.search",
-        active = "primitive.yellow.search_active",
+        _ = "primitive.rotated.yellow.search",
+        active = "primitive.rotated.yellow.search_active",
       },
 
       reference = {
-        _ = "primitive.blue.reference",
-        subtle = "primitive.blue.reference_subtle",
-        write = "primitive.blue.reference_write",
+        _ = "primitive.rotated.blue.reference",
+        subtle = "primitive.rotated.blue.reference_subtle",
+        write = "primitive.rotated.blue.reference_write",
       },
 
       feedback = {
         info = "background.reference",
         hint = "background.reference.subtle",
-        success = "primitive.green.subtle",
-        warning = "primitive.yellow.subtle",
-        danger = "primitive.red.subtle",
+        success = "primitive.rotated.green.subtle",
+        warning = "primitive.rotated.yellow.subtle",
+        danger = "primitive.rotated.red.subtle",
       },
     },
 
@@ -113,20 +114,20 @@ local theme = {
     },
 
     accent = {
-      primary = "primitive.blue.primary",
-      secondary = "primitive.magenta.primary",
-      tertiary = "primitive.magenta.secondary",
-      quaternary = "primitive.magenta.tertiary",
-      literal = "primitive.blue.literal",
-      note = "primitive.yellow.primary",
+      primary = "primitive.rotated.blue.primary",
+      secondary = "primitive.rotated.magenta.primary",
+      tertiary = "primitive.rotated.magenta.secondary",
+      quaternary = "primitive.rotated.magenta.tertiary",
+      literal = "primitive.rotated.blue.literal",
+      note = "primitive.rotated.yellow.primary",
     },
 
     feedback = {
       info = "accent.literal",
       hint = "accent.primary",
-      success = "primitive.green.primary",
+      success = "primitive.rotated.green.primary",
       warning = "accent.note",
-      danger = "primitive.red.primary",
+      danger = "primitive.rotated.red.primary",
     },
 
     interaction = {
@@ -158,11 +159,11 @@ local theme = {
       variable = "foreground.primary",
       property = "foreground.primary",
       constant = "accent.literal",
+      boolean = "syntax.constant",
       string = "feedback.danger",
       number = "syntax.constant",
-      boolean = "syntax.constant",
-      operator = "primitive.blue.deep",
-      punctuation = "foreground.secondary",
+      operator = "accent.secondary",
+      punctuation = "foreground.primary",
       bracket = "syntax.punctuation",
       preprocessor = "accent.note",
       builtin = "syntax.constant",
